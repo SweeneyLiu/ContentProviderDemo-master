@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/divider_line"
+            android:dividerPadding="@dimen/content_divider_padding_start"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/list_item_height"
+            android:showDividers="end|middle">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_with_summary_height"
+                android:paddingEnd="@dimen/content_padding_end"
+                android:paddingStart="@dimen/content_padding_start">
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dnd_manual_toggle"
+                        android:textAppearance="@style/primaryTitleTextAppearance"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dnd_manual_toggle_summary"
+                        android:textAppearance="@style/secondaryTitleTextAppearance"/>
+            </LinearLayout>
+
+            <Switch
+                    android:id="@+id/dnd_manual_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_height"
+                android:paddingEnd="@dimen/content_padding_end"
+                android:paddingStart="@dimen/content_padding_start">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/dnd_auto_rule_toggle"
+                    android:textAppearance="@style/primaryTitleTextAppearance"/>
+
+            <Switch
+                    android:id="@+id/dnd_auto_rule_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/dnd_select_time_category"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="@dimen/list_category_height"
+                android:paddingEnd="@dimen/content_padding_end"
+                android:paddingStart="@dimen/content_padding_start">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/end_select_time"
+                    android:textAppearance="@style/categoryTitleTextAppearance"/>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:id="@+id/dnd_repeat_cycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/content_padding_end"
+                android:paddingStart="@dimen/content_padding_start">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_category_height"
+                    android:visibility="gone"
+                    android:gravity="center_vertical"
+                    android:text="@string/dnd_repeat_title"
+                    android:textAppearance="@style/categoryTitleTextAppearance"/>
+
+            <com.lsw.demo.WeekSelector
+                    android:layout_marginTop="@dimen/week_selector_margin_top"
+                    android:id="@+id/dnd_week_selector"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_category_height">
+
+            </com.lsw.demo.WeekSelector>
+
+
+            <FrameLayout
+                    android:id="@+id/dnd_select_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/content_divider_padding_end"
+                    android:paddingStart="@dimen/content_divider_padding_start">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                    <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="18dp"
+                            android:paddingTop="48dp">
+
+                        <TextView
+                                android:id="@+id/dnd_start_time_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="18dp"
+                                android:gravity="center"
+                                android:text="@string/dnd_auto_rule_start_day"
+                                android:textAppearance="@style/categoryTitleTextAppearance"/>
+
+                        <com.lsw.demo.WheelView
+                                android:id="@+id/dnd_start_hour"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@id/dnd_start_time_title"/>
+
+                        <com.lsw.demo.WheelView
+                                android:id="@+id/dnd_start_minute"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/dnd_start_time_title"
+                                android:layout_toEndOf="@id/dnd_start_hour"/>
+                    </RelativeLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"/>
+
+                    <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="18dp"
+                            android:paddingTop="48dp">
+
+                        <TextView
+                                android:id="@+id/dnd_end_time_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="18dp"
+                                android:gravity="center"
+                                android:text="@string/dnd_auto_rule_end_day"
+                                android:textAppearance="@style/categoryTitleTextAppearance"/>
+
+                        <com.lsw.demo.WheelView
+                                android:id="@+id/dnd_end_hour"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@id/dnd_end_time_title"/>
+
+                        <com.lsw.demo.WheelView
+                                android:id="@+id/dnd_end_minute"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/dnd_end_time_title"
+                                android:layout_toEndOf="@id/dnd_end_hour"/>
+                    </RelativeLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="162dp"
+                        android:background="#FFFFFF"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="233dp"
+                        android:background="#FFFFFF"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingEnd="@dimen/content_padding_end"
+                android:paddingStart="@dimen/content_padding_start">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_category_height"
+                    android:gravity="center_vertical"
+                    android:text="@string/dnd_effect_title"
+                    android:textAppearance="@style/categoryTitleTextAppearance"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

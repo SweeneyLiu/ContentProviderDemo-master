@@ -1,0 +1,47 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="common_ui_fullScreenTheme" parent = "android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="common_ui_fullScreenThemeNotTransparent" parent = "common_ui_fullScreenTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="primaryTitleTextAppearance"
+        parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textSize">44sp</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <style name="secondaryTitleTextAppearance"
+        parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <style name="categoryTitleTextAppearance"
+        parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/selectable_text_color</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+</resources>

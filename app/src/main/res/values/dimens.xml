@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">96dp</dimen>
+
+    <dimen name="content_divider_padding_start">56dp</dimen>
+    <dimen name="content_divider_padding_end">56dp</dimen>
+
+    <dimen name="content_padding_start">72dp</dimen>
+    <dimen name="content_padding_end">72dp</dimen>
+
+    <dimen name="icon_size">56dp</dimen>
+
+    <dimen name="list_item_padding_start">16dp</dimen>
+    <dimen name="list_item_padding_end">16dp</dimen>
+
+    <dimen name="list_item_height">96dp</dimen>
+    <dimen name="list_item_with_summary_height">120dp</dimen>
+    <dimen name="list_category_height">72dp</dimen>
+    <dimen name="list_edit_height">161dp</dimen>
+
+    <dimen name="scrollbar_size">4dp</dimen>
+
+    <dimen name="button_toolbar_height">120dp</dimen>
+    <dimen name="button_space">24dp</dimen>
+    <dimen name="button_marginBottom">44dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_width">160dp</dimen>
+
+
+    <dimen name="wallpaper_item_space">15dp</dimen>
+    <dimen name="number_space">0dp</dimen>
+
+    <dimen name="week_selector_margin_top">60dp</dimen>
+
+</resources>
