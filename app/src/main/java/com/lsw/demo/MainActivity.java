@@ -6,15 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.AlarmClock;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 
 public class MainActivity extends Activity {
 
@@ -48,8 +56,8 @@ public class MainActivity extends Activity {
 //                    timeStart();
 //                }
 //
-                Intent intent = new Intent(MainActivity.this,ScreenActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this,ScreenActivity.class);
+//                startActivity(intent);
 
             }
         });
@@ -132,5 +140,32 @@ public class MainActivity extends Activity {
         super.onResume();
 //        timeStart();
     }
+
+    /**
+     * 获得系统亮度
+     *
+     * @return
+     */
+    private int getSystemBrightness() {
+        int systemBrightness = 0;
+        try {
+            systemBrightness = Settings.System.getInt(getContentResolver(), Settings.System.SCREEN_BRIGHTNESS);
+        } catch (Settings.SettingNotFoundException e) {
+            e.printStackTrace();
+        }
+        return systemBrightness;
+    }
+
+    /**
+     * 设置亮度
+     *
+     * @param brightness
+     */
+    private void setLight(int brightness) {
+        WindowManager.LayoutParams lp = MainActivity.this.getWindow().getAttributes();
+        lp.screenBrightness = Float.valueOf(brightness) * (1f / 255f);
+        MainActivity.this.getWindow().setAttributes(lp);
+    }
+
 
 }
